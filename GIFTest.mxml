@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" creationComplete="init()" minWidth="955" minHeight="600" xmlns:local="*">
+	<fx:Script>
+		<![CDATA[
+			import org.bytearray.gif.decoder.GIFDecoder;
+			import org.bytearray.gif.player.GIFPlayer;
+			
+			
+			public function init():void{
+				var gifplayer:GIFPlayer = new GIFPlayer();
+				var imageURL:URLRequest = new URLRequest("images/diego.gif");
+				gifplayer.load(imageURL);
+				this.addChild(gifplayer);
+				
+				var file:FileReference = new FileReference();
+				
+				//var byteArray:ByteArray = imageURL.
+				var gifDecoder:GIFDecoder = new GIFDecoder();
+				//gifDecoder.read(imageURL);
+				
+			}
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	<!-- <mx:Image x="55" y="66" width="400" height="400" source="images/diego.gif"/>  -->
+	<local:GIFPlayerComponent url="images/diego.gif" width="200" height="200" />
+</s:Application>
